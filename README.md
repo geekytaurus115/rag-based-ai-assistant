@@ -2,6 +2,25 @@
 
 A Retrieval-Augmented Generation (RAG) system that creates an intelligent Q&A assistant from your YouTube video collection. The system downloads videos, transcribes them, creates vector embeddings, and enables semantic search to answer questions about video content with precise timestamps.
 
+## 🎥 Demo
+
+See the RAG-Based AI Assistant in action:
+
+<video src="demo/rag_ai_assistant_demo.mp4" controls width="100%">
+  Your browser doesn't support video playback. <a href="demo/rag_ai_assistant_demo.mp4">Download the demo video</a>
+</video>
+
+> **Note:** If the video doesn't play above, you can [download and watch the demo](demo/rag_ai_assistant_demo.mp4) directly.
+
+**What you'll see in the demo:**
+- 🎨 Modern dark-themed web interface
+- 🔍 Real-time semantic search through video transcripts
+- 💬 AI-powered responses with specific video timestamps
+- 🎯 Relevant video segments with similarity scores
+- 🔗 Direct YouTube links to exact moments
+
+---
+
 ## 🎯 Overview
 
 This project implements a complete RAG pipeline that:
