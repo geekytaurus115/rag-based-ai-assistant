@@ -413,54 +413,6 @@ top_results = 7  # Increase for more context
 "model": "bge-m3"  # Must match the model used in preprocessing
 ```
 
----
-
-## 🌐 Web UI (Modern Interface)
-
-### Using the Web Interface
-
-Instead of using the terminal, you can use the modern web interface for a better experience!
-
-**Start the web server:**
-```bash
-# Ensure torch_env is activated and Ollama is running
-torch_env\Scripts\activate  # Windows
-# source torch_env/bin/activate  # Linux/macOS
-
-python run.py
-```
-
-**Access the interface:**
-```
-Open your browser and go to: http://localhost:5000
-```
-
-### Features
-
-✨ **Modern UI Design:**
-- Clean, dark-themed interface with gradient effects
-- Responsive design works on desktop and mobile
-- Real-time status indicators
-- Beautiful animations and transitions
-
-🎯 **User-Friendly:**
-- Simple text input for questions
-- Example questions to get started
-- Real-time loading indicators
-- Clear error messages
-
-📊 **Rich Results Display:**
-- AI-generated responses with proper formatting
-- Relevant video segments with timestamps
-- Similarity scores for each chunk
-- Video titles and time ranges
-
-⚡ **Real-Time Stats:**
-- Total videos loaded
-- Total chunks in database
-- Ollama connection status
-- System health monitoring
-
 ### API Endpoints
 
 The Flask backend provides several REST API endpoints:
@@ -533,17 +485,6 @@ rag_based_ai/
 └── config/
     └── settings.py      # Configuration
 ```
-
-### Screenshots
-
-The web interface includes:
-- 🎨 Gradient background with grid effects
-- 📝 Large text input area
-- 🔘 One-click example questions
-- ⏳ Smooth loading animations
-- 📊 Statistics dashboard
-- 🎯 Color-coded video segments
-- ⚡ Real-time status indicators
 
 ### Troubleshooting Web UI
 
