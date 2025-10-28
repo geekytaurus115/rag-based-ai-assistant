@@ -1,0 +1,34 @@
+# RAG-Based AI Assistant - Dependencies
+
+# Core Framework
+flask>=3.0.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+scikit-learn>=1.3.0
+joblib>=1.3.0
+
+# API & Requests
+requests>=2.31.0
+
+# AI/ML Models
+openai-whisper>=20230314
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Video/Audio Processing
+yt-dlp>=2023.3.4
+
+# Note: FFmpeg must be installed separately on your system
+# Windows: Download from ffmpeg.org and add to PATH
+# Linux: sudo apt install ffmpeg
+# macOS: brew install ffmpeg
+
+# Note: Ollama must be installed separately
+# Download from: https://ollama.ai/
+# Required models:
+#   ollama pull bge-m3
+#   ollama pull llama3.2
+
