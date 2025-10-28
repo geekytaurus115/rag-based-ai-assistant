@@ -570,65 +570,6 @@ python preprocess_json.py
 # Check if embeddings_df.joblib exists
 ```
 
----
-
-## 📁 Project Structure
-
-```
-rag_based_ai/
-├── torch_env/            # Virtual environment (Python 3.12 + PyTorch + CUDA)
-│   ├── Scripts/          # Windows activation scripts
-│   ├── bin/              # Linux/macOS activation scripts
-│   └── Lib/              # Python packages and dependencies
-│
-├── app/                  # Flask application
-│   ├── __init__.py       # App factory & initialization
-│   ├── routes/           # Route blueprints
-│   │   ├── __init__.py
-│   │   ├── main.py       # Main web routes
-│   │   └── api.py        # API endpoints
-│   ├── services/         # Business logic
-│   │   ├── __init__.py
-│   │   ├── embedding_service.py
-│   │   ├── llm_service.py
-│   │   └── query_service.py
-│   ├── utils/            # Helper functions
-│   │   ├── __init__.py
-│   │   └── helpers.py
-│   ├── templates/        # HTML templates
-│   │   └── index.html
-│   └── static/           # Static files (CSS, JS)
-│       └── style.css
-│
-├── config/               # Configuration
-│   ├── __init__.py
-│   └── settings.py       # App settings & constants
-│
-├── scripts/              # Data preprocessing scripts
-│   ├── README.md         # Scripts documentation
-│   ├── youtube_downloader.py  # Step 1: Download videos
-│   ├── video_to_mp3.py        # Step 2: Convert to audio
-│   ├── extract_audio.py       # Utility: Extract audio segments
-│   ├── mp3_to_json.py         # Step 3: Transcribe audio
-│   ├── speech_to_text.py      # Whisper transcription
-│   ├── preprocess_json.py     # Step 4: Generate embeddings
-│   ├── create_video_mapping.py # Create video URL mapping
-│   ├── process_incoming.py    # Query interface (CLI)
-│   └── video_urls.txt         # Input: YouTube URLs
-│
-├── data/                 # Data files
-│   ├── embeddings_df.joblib   # Vector embeddings
-│   ├── video_mapping.json     # Video URL mapping
-│   └── output.json            # Processed data
-│
-├── videos/               # Downloaded YouTube videos
-├── audios/               # Extracted MP3 audio files
-├── jsons/                # Transcription JSON files with timestamps
-│
-├── run.py                # Main entry point
-└── README.md             # This file
-```
-
 ## 🔧 Utility Scripts
 
 ### extract_audio.py
@@ -749,38 +690,6 @@ print(f'✅ Whisper available: {whisper.available_models()}')
 "
 ```
 
----
-
-## 📊 Performance Tips
-
-1. **Faster Processing:**
-   - **Use GPU**: Ensure CUDA is properly configured (5-6x speedup)
-   - Use smaller Whisper models (base/small for quick processing)
-   - Process videos in parallel (modify scripts to use multiprocessing)
-   - Enable fp16 mode on GPU: `fp16=True` in transcribe()
-   - Use `medium` model as sweet spot between speed and accuracy
-
-2. **Better Accuracy:**
-   - Use Whisper large-v2 model for production
-   - Set `word_timestamps=True` for precise timing
-   - Increase `top_results` in process_incoming.py (try 10-15)
-   - Fine-tune prompt engineering in process_incoming.py
-   - Clean audio quality improves transcription accuracy
-
-3. **Memory Management:**
-   - **GPU Memory**: Monitor with `nvidia-smi`, use smaller models if needed
-   - **CPU Memory**: Process videos in batches, not all at once
-   - Use smaller LLM models (phi3, mistral) for lower RAM usage
-   - Clear embeddings cache if needed: `del df` after use
-
-4. **Environment Best Practices:**
-   - Always activate `torch_env` before running scripts
-   - Keep PyTorch and CUDA drivers updated
-   - Use SSD storage for faster file I/O
-   - Close unnecessary applications during transcription
-
----
-
 ## 🐛 Troubleshooting
 
 ### FFmpeg not found
@@ -866,49 +775,6 @@ Feel free to:
 - Suggest improvements
 - Submit pull requests
 - Share your use cases
-
----
-
-## 📝 License
-
-This project is open source and available under the MIT License.
-
----
-
-## 🎓 Use Cases
-
-- **Educational Content**: Search across lecture videos
-- **Tutorial Series**: Find specific topics in coding tutorials
-- **Podcast Archives**: Query podcast episodes
-- **Course Materials**: Navigate through video courses
-- **Documentation**: Create searchable video documentation
-
----
-
-## 🔮 Future Enhancements
-
-- [x] **Web UI with Flask** ✅ (Completed!)
-- [ ] Multi-language support without translation
-- [ ] Video thumbnail generation
-- [ ] Batch processing automation
-- [ ] Docker containerization
-- [ ] Cloud deployment support
-- [ ] Real-time streaming transcription
-- [ ] User authentication and multi-user support
-- [ ] Video playback integration
-- [ ] Export results to PDF/Markdown
-
----
-
-## 💡 Tips for Best Results
-
-1. **Quality Videos**: Higher audio quality = better transcriptions
-2. **Clear Speech**: Content with clear narration works best
-3. **Relevant Queries**: Ask specific questions related to video content
-4. **Organized Content**: Group related videos together
-5. **Regular Updates**: Re-run preprocessing when adding new videos
-
----
 
 **Built with ❤️ for the AI community**
 
