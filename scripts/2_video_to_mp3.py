@@ -1,5 +1,10 @@
 # Convert videos to mp3
 
+"""
+Run - 1 
+conversion of video files in the 'videos' directory to mp3 files in the 'audios' directory.
+"""
+
 import os
 import subprocess
 
