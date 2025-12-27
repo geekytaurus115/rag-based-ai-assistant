@@ -4,15 +4,15 @@ import json
 import pandas as pd
 import joblib
 
-def create_embedding(prompt_list):
-    # https://github.com/ollama/ollama/blob/main/docs/api.md#generate-embeddings
-    r = requests.post("http://localhost:11434/api/embed", json={
-        "model": "bge-m3",
-        "input": prompt_list
-    })
+# def create_embedding(prompt_list):
+#     # https://github.com/ollama/ollama/blob/main/docs/api.md#generate-embeddings
+#     r = requests.post("http://localhost:11434/api/embed", json={
+#         "model": "bge-m3",
+#         "input": prompt_list
+#     })
 
-    embedding = r.json()['embeddings']
-    return embedding
+#     embedding = r.json()['embeddings']
+#     return embedding
 
 
 # Get paths relative to project root
